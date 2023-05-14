@@ -3,6 +3,7 @@ using System;
 
 public class Save {
     public string _editDate;
+    public string _saveFilename;
 
 
 
