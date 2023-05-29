@@ -3,23 +3,26 @@ using System;
 
 public class Word {
     public string _word;
+    private string _hiddenWord;
+    private bool _hidden;
 
-    public bool _hidden;
-    
-    
+
     public void Hide() {
-        for (int i = 0; i < _word.Length; i++)
-        {
-            _word = "_";
-        }
+        
     }
 
     public void Show() {
         
     }
 
-    public void CheckIfHidden() {
-
+    public bool CheckIfHidden() {
+        if (_hidden == true) {
+            return true;
+        }
+        else{
+            return false;
+        }
+        
     }
 
     public string GetRenderedWord() {
@@ -30,11 +33,12 @@ public class Word {
     
     public Word() {
         _word = "";
-        _hidden = false;
+        _hiddenWord = "";
     }
 
-    public Word(string selectedWord, bool hiddenStatus) {
+    public Word(string selectedWord, string hiddenWord, bool hiddenState) {
         _word = selectedWord;
-        _hidden = hiddenStatus;
+        _hiddenWord = hiddenWord;
+        _hidden = hiddenState;
     }
 }

@@ -12,7 +12,6 @@ class Program
 
         bool quit = false;
 
-
         while (quit != true) {
             Scripture scripture = new Scripture(inputScripture, inputReference);
             Prompt userPrompt = new Prompt();
@@ -22,8 +21,14 @@ class Program
 
             string userAnswer = userPrompt.GetPromptAnswer();
             
-            if (userAnswer == "hide") {
-                scripture.HideWords();
+            if (userAnswer == "") {
+                //If _scripture is all blank quit program
+                if (scripture.CheckScripture() == true) {
+                    quit = true;
+                }
+                else{
+                    scripture.HideWords();
+                }
             }
             else if (userAnswer == "quit") {
                 quit = true;
