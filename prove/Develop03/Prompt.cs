@@ -18,6 +18,9 @@ public class Prompt {
         if (answer == "quit") {
             output = "quit";
         }
+        else{
+            output = "";
+        }
         
         return output;
     }

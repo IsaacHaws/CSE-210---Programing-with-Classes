@@ -10,12 +10,12 @@ class Program
 
         string inputReference = "Deuteronomy 31:6";
 
+        Scripture scripture = new Scripture(inputScripture, inputReference);
+        Prompt userPrompt = new Prompt();
+        
         bool quit = false;
-
+        
         while (quit != true) {
-            Scripture scripture = new Scripture(inputScripture, inputReference);
-            Prompt userPrompt = new Prompt();
-
             scripture.DisplayScripture();
             userPrompt.DisplayPrompt();
 

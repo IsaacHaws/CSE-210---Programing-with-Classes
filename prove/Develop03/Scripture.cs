@@ -1,9 +1,9 @@
 using System;
 
 public class Scripture {
-    public List<Word> _scripture = new List<Word>();
+    private List<Word> _scripture = new List<Word>();
 
-    private string _reference;    
+    private string _reference;   
     
     public void HideWords() {
         Random randomWord = new Random();
@@ -18,11 +18,13 @@ public class Scripture {
             int randomHideWord = randomWord.Next(0, _scripture.Count());
             
             //Check if word is hidden
-            bool wordState = _scripture[randomHideWord].CheckIfHidden();
+            bool wordHiddenState = _scripture[randomHideWord].CheckIfHidden();
             
             //If it is not hidden, hide the word using the hide method
-            if (wordState == true) {
+            //and set the _hiddenState to true
+            if (wordHiddenState == false) {
                 _scripture[randomHideWord].Hide();
+                _scripture[randomHideWord].SetHiddenState();
             }
             //Else add 1 to the numWords var so the for loop can hide another word
             else{
@@ -35,9 +37,10 @@ public class Scripture {
         //Clear the console and iterate through the _scripture variable
         //and print eachword with a space
         Console.Clear();
+        Console.Write(_reference + " ");
         foreach (Word item in _scripture)
-        {
-            Console.Write(item._word + " ");
+        {   
+            Console.Write(item.GetRenderedWord() + " ");
         }
         Console.WriteLine();
     }   

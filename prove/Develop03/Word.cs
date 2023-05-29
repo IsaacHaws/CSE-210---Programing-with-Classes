@@ -2,17 +2,17 @@ using System;
 
 
 public class Word {
-    public string _word;
+    private string _word;
     private string _hiddenWord;
     private bool _hidden;
 
 
     public void Hide() {
-        
+        _word = _hiddenWord;
     }
-
-    public void Show() {
-        
+    
+    public void SetHiddenState() {
+        _hidden = true;
     }
 
     public bool CheckIfHidden() {
