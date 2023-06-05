@@ -5,7 +5,7 @@ public class Activity {
     private string _activityName;
     private string _description;
     private int _duration;
-    private List<string> _animationString = new List<string>;
+    private List<string> _animationString;
     private DateTime _currentTime;
     private int _animationTime;
 
