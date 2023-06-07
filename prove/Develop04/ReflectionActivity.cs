@@ -4,9 +4,9 @@ public class ReflectionActivity : Activity
     private List<string> _prompts;
     private List<string> _promptQuestions;
 
-    ReflectionActivity(List<string> prompts) {
-        _prompts = prompts;
+    public ReflectionActivity(string name, string description): base(name, description) {
     }
+    
 
 
     public string GetRandomPrompt() {

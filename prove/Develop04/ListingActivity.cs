@@ -5,9 +5,9 @@ public class ListingActivity : Activity
     private int _promptNum;
     private string _userInput;
 
-    ListingActivity(int promptNum) {
-        _promptNum = promptNum;
+    public ListingActivity(string name, string description): base(name, description) {
     }
+
 
 
     public string GetRandomPrompt() {

@@ -5,18 +5,18 @@ public class Activity {
     private string _activityName;
     private string _description;
     private int _duration;
-    private List<string> _animationString;
-    private DateTime _currentTime;
-    private int _animationTime;
+    private string[] _animationString = {"+", "-", "#", "=", "_", "*"};
+    private DateTime _currentTime = DateTime.Now;
+    private int _animationTime = 10;
 
 
     
-    Activity() {
-        _activityName = "blank";
-        _description = "blank";
+    public Activity() {
+        _activityName = "";
+        _description = "";
     }
     
-    Activity(string name, string description) {
+    public Activity(string name, string description) {
         _activityName = name;
         _description = description;
     }
@@ -37,9 +37,22 @@ public class Activity {
     }
 
     public void PauseNSpinner() {
+        DateTime endtime = _currentTime.AddSeconds(_animationTime);
+        
+        int i = 0;
+        
+        while (DateTime.Now < endtime) {
+            Console.Write(_animationString[i]);
+            Thread.Sleep(1000);
+            Console.Write("\b \b");
+            i++;
 
+            if (i >= _animationString.Count()) {
+                i = 0;
+            }
+        }
     }
-
+    
     public void PauseNCountdownTimer() {
 
     }

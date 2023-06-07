@@ -6,7 +6,7 @@ class Program
     {
         bool quit = false;
 
-        while (quit != false) {
+        while (quit != true) {
             Console.WriteLine("Menu Options:");
             Console.WriteLine(" 1. Start Breathing Activity");
             Console.WriteLine(" 2. Start Reflection Activity");
@@ -21,6 +21,8 @@ class Program
             {
                 case 1:
                     Console.WriteLine("case 1");
+                    Activity activity = new Activity();
+                    activity.PauseNSpinner();
                     break;
 
                 case 2:
@@ -32,11 +34,13 @@ class Program
                     break;
 
                 case 4:
-                    Console.WriteLine("case 4");
+                    quit = true;
                     break;
 
                 default:
-                    Console.Write("Works");
+                    Console.WriteLine();
+                    Console.WriteLine("Invalid Answer! Try Again");
+                    Console.WriteLine();
                     break;
             }
             

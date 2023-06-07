@@ -5,8 +5,7 @@ public class BreathingActivity : Activity
     private string _breatheOutMsg = "Breath Out: ";
 
     
-    BreathingActivity(string name, string description) : base(name, description) {
-        
+    public BreathingActivity(string name, string description): base(name, description) {
     }
 
 
