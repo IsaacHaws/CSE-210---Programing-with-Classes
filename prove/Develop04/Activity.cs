@@ -4,17 +4,12 @@ using System;
 public class Activity {
     private string _activityName;
     private string _description;
-    private int _duration;
+    private int _activityDuration;
     private string[] _animationString = {"+", "-", "#", "=", "_", "*"};
     private DateTime _currentTime = DateTime.Now;
     private int _animationTime = 10;
 
 
-    
-    public Activity() {
-        _activityName = "";
-        _description = "";
-    }
     
     public Activity(string name, string description) {
         _activityName = name;
@@ -27,7 +22,7 @@ public class Activity {
         Console.WriteLine($"Welcome to the {_activityName}.");
         Console.WriteLine();
         Console.WriteLine(_description);
-
+        Console.WriteLine();
     }
 
     public int GetDuration() {
@@ -36,12 +31,22 @@ public class Activity {
         return answer;
     }
 
-    public void PauseNSpinner() {
-        DateTime endtime = _currentTime.AddSeconds(_animationTime);
+    public void setDuration(int activityTime) {
+        _activityDuration = activityTime;
+    }
+
+    public void DisplayGetReady() {
+        Console.Clear();
+        Console.WriteLine("Get Ready...");
+    }
+
+    public void PauseNSpinner(int seconds) {
+        DateTime spinStartTime = DateTime.Now;
+        DateTime spinEndTime = spinStartTime.AddSeconds(seconds);
         
         int i = 0;
         
-        while (DateTime.Now < endtime) {
+        while (DateTime.Now < spinEndTime) {
             Console.Write(_animationString[i]);
             Thread.Sleep(1000);
             Console.Write("\b \b");
@@ -53,12 +58,26 @@ public class Activity {
         }
     }
     
-    public void PauseNCountdownTimer() {
+    public void PauseNCountdownTimer(int seconds) {
+        DateTime startTime = DateTime.Now;
+        DateTime endTime = startTime.AddSeconds(seconds);
+         
+        int i = seconds;
 
+        while (DateTime.Now < endTime) {
+            Console.Write(i);
+            Thread.Sleep(1000);
+            Console.Write("\b \b");
+            i--;
+        }
     }
 
     public void DisplayEndMsg() {
-        Console.WriteLine("Well Done!!\n");
-        Console.WriteLine($"You have completed another {_duration} seconds of the {_activityName}");
+        Console.WriteLine("\n");
+        Console.WriteLine("Well Done!!");
+        this.PauseNSpinner(5);
+        Console.WriteLine();
+        Console.WriteLine($"You have completed another {_activityDuration} seconds of the {_activityName}");
+        this.PauseNSpinner(8);
     }
 }
