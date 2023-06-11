@@ -71,7 +71,7 @@ public class ReflectionActivity : Activity
         while (DateTime.Now < endTime) {
             string randomQuestion = this.GetPromptQuestion();
             Console.Write($"> {randomQuestion} ");
-            this.PauseNSpinner(15);
+            this.PauseNSpinner(10);
             Console.WriteLine();
         }
     }

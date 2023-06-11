@@ -5,7 +5,6 @@ public class Activity {
     private string _description;
     protected int _activityDuration;
     private string[] _animationString = {"/", "|", "\\", "-", "/", "|", "\\", "-"};
-    private int _animationTime = 10;
 
 
     
