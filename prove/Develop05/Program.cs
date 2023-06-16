@@ -4,7 +4,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        //www.plantuml.com/plantuml/png/hPF1QZen4CRlynI1_yLbzGL4n7-r5Q58gOSUIYbnTsf3iycIPAMbzTsxcqdQiEYXeWT9ledV_FB5cLd7ZMig2ONarhAbvf9zmkXvroxMlC8niyu8jGlI0crXHEs4LhtAdHRAsJ5hlm4caxbMrZM5qsOwXRop7T1nfbhN8GkRyjTlsFsKrTuc0_YtHBSC48CiDejo2dAaIZ190V9xBBGfFKX6bFb2s5hoZwZjjIWXNzcvhcg93ijEt6ejuG3jnqSp-HgDs4Pq1xfz8buxD8hBdZf_nU9D2kky3a0nHuSOTX4xXdunFtDsW4Dln7wCiqiaGEpXeWJVGxNdi5w2ZT3Ij2dPhLQDNJSLUORz_qetodc9NI1hMZjHOLZw9XbZz2U-2WXRDE5kKOuaGJuT0vT_Yc73z-Xl_o8agcI82UWcgEdSF1ZXi2l47edThURbKRjMwhOhLU9xeYKnzKiK6AdXHQHGQEEHnoSWnYDJVthYuxI75pt035NPLF8R
+        //www.plantuml.com/plantuml/png/hLHDgnCn5DtdLmJSl67QF_0eZ_TijHIaY5su495qSgt1J38aTugY_dVptJXC5vPsqKdElRdtd9EFPulCuDXBqabcBTrg9kalilnoSeCzw-6HMZH2dHAq0TiPCQ3GQX9vhuL2-qZTFo6hrLehYsE7sZmzaTQNVOZfLBcg2vec_59luPVI8PHf27cr1Tmc4WzDRfRXciWqMiXK0T9-W4uR7eWqaMMx4NQGx6V6pbfmqkxiMlU310JkmQFMalmXxXUiMVrUBkb1-0G_hy0t24OnEK7Ntw3xBeN5W1CIRSuLijbTxXZx5V_CpGOkGY5Q2ZV4rG0iqWx84BA-UxWJTHKJlB2937lJGRW3jqYjx4Hn_QZLQFTZ7shc-KklHuK1edVP1pz6qKCQXYODfV60lquKZc2ojWWN9Xc-QWEJ_sN3WPqXgFyg9AZgWi-8zRbPh4_tLp7TpBTfzJzNxACH23wIoLHztsd6P_iwI0e5Diy_VNQ8JzWf3Z-ghChXQIXwdL0tdD7Y-zTQr4NBp0jp_NN9Bqi-8UqBBtlYlqxoCoW-zl8l
 
         int points = 0;
 
@@ -39,6 +39,8 @@ class Program
 
                     if (goaltype == 1) {
                         Console.WriteLine("What is the name of your goal? ");
+                        string goalName = Console.ReadLine();
+
 
                     }
 
@@ -49,12 +51,24 @@ class Program
                     else if (goaltype == 3) {
 
                     }
-                    
-                    
-                    
-                    
-                    
                     break;
+                
+                case 2: 
+
+
+                    break;
+
+
+                case 3: 
+
+
+                    break;
+                    
+                    
+                    
+                    
+                    
+                
     
                 default:
                     Console.WriteLine("Error!");
