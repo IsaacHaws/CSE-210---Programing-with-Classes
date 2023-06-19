@@ -23,9 +23,9 @@ class Program
             Console.WriteLine("  5. Record Event");
             Console.WriteLine("  6. Quit");
 
+            Console.Write("Select a choice from the menu: ");
             int menuAnswer = int.Parse(Console.ReadLine());
-
-
+            
 
             switch (menuAnswer)
             {
@@ -38,24 +38,56 @@ class Program
                     int goaltype = int.Parse(Console.ReadLine());
 
                     if (goaltype == 1) {
-                        Console.WriteLine("What is the name of your goal? ");
+                        Console.Write("What is the name of your goal? ");
                         string goalName = Console.ReadLine();
 
+                        Console.Write("What is a short description of it? ");
+                        string goalDescription = Console.ReadLine();
 
+                        Console.Write("What is the amount of points associated with this goal? ");
+                        int goalPoints = int.Parse(Console.ReadLine());
+
+                        goals.Add(new SimpleGoal(goalName, goalDescription, goalPoints, false));
                     }
 
                     else if (goaltype == 2) {
+                        Console.Write("What is the name of your goal? ");
+                        string goalName = Console.ReadLine();
 
+                        Console.Write("What is a short description of it? ");
+                        string goalDescription = Console.ReadLine();
+
+                        Console.Write("What is the amount of points associated with this goal? ");
+                        int goalPoints = int.Parse(Console.ReadLine());
+
+                        goals.Add(new EternalGoal(goalName, goalDescription, goalPoints));
                     }
 
                     else if (goaltype == 3) {
+                        Console.Write("What is the name of your goal? ");
+                        string goalName = Console.ReadLine();
 
+                        Console.Write("What is a short description of it? ");
+                        string goalDescription = Console.ReadLine();
+
+                        Console.Write("What is the amount of points associated with this goal? ");
+                        int goalPoints = int.Parse(Console.ReadLine());
+
+                        Console.Write("How many times does this goal need to accomplished for a bonus? ");
+                        int bonusNum = int.Parse(Console.ReadLine());
+
+                        Console.Write("What is the bonus for accomplishing it that many times? ");
+                        int bonusAmount = int.Parse(Console.ReadLine());
+
+                        goals.Add(new ChecklistGoal(goalName, goalDescription, goalPoints, bonusNum, bonusAmount));
                     }
                     break;
                 
-                case 2: 
-
-
+                case 2:     
+                    foreach (Goal goal in goals) {
+                        goal.DisplayGoal();
+                        Console.WriteLine("\n");
+                    }
                     break;
 
 
@@ -64,23 +96,31 @@ class Program
 
                     break;
                     
-                    
-                    
-                    
-                    
                 
-    
+                case 4: 
+
+
+                    break;
+
+                
+                case 5: 
+
+
+                    break;
+
+
+                case 6: 
+                    Console.WriteLine();
+                    Console.WriteLine("GoodBye");
+                    
+                    quit = true;
+                    break;
+
+                    
                 default:
-                    Console.WriteLine("Error!");
+                    Console.WriteLine("Number must be between 1 and 6!");
                     break;
             }
-
-
-
-
-
-
-
         }
     }
 }
