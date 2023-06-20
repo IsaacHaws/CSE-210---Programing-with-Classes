@@ -4,6 +4,7 @@ using System;
 public class ChecklistGoal : Goal {
     private int _bonusNum;
     private int _bonusAmount;
+    private int timesCompleted;
 
 
     public ChecklistGoal(string name, string description, int points, int times, int bonusAmount): base(name, description, points) {
@@ -26,11 +27,16 @@ public class ChecklistGoal : Goal {
         return GetGoalPoints();
     }
 
-    public override void DisplayGoal() {
-
+    public override void DisplayGoal(int num) {
+        Console.WriteLine($"{num}. [ ] {GetGoalName()} ({GetGoalDescription()}) -- Currently Completed: {timesCompleted}/{GetBonusNumber()}");
     }
 
     public override bool IsComplete() {
-        return false;
+        if (timesCompleted >= GetBonusNumber()) {
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 }

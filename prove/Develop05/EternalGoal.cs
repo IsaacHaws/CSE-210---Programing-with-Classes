@@ -15,8 +15,8 @@ public class EternalGoal : Goal {
         return GetGoalPoints();
     }
 
-    public override void DisplayGoal() {
-
+    public override void DisplayGoal(int num) {
+        Console.WriteLine($"{num}. [ ] {GetGoalName()} ({GetGoalDescription()})");
     }
 
     public override bool IsComplete() {

@@ -11,28 +11,30 @@ public class SimpleGoal : Goal {
 
     
 
-    public bool GetCompletedState() {
-        return _completed;
-    }
-
-
-
     public override int RecordGoal() {
+        _completed = true;
+        Console.WriteLine($"Congradulations! You have earned {GetGoalPoints()} points!");
+        
         return GetGoalPoints();
     }
 
-    public override void DisplayGoal() {
-        if (_completed == true) {
-            Console.Write($"1. [X] {GetGoalName()} ({GetGoalDescription()})");
+    public override void DisplayGoal(int num) {
+        if (IsComplete() == true) {
+            Console.WriteLine($"{num}. [X] {GetGoalName()} ({GetGoalDescription()})");
         }
 
         else {
-            Console.Write($"1. [ ] {GetGoalName()} ({GetGoalDescription()})");
+            Console.WriteLine($"{num}. [ ] {GetGoalName()} ({GetGoalDescription()})");
         }
         
     }
 
     public override bool IsComplete() {
-        return false;
+        if (_completed == true) {
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 }

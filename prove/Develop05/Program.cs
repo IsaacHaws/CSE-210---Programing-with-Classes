@@ -83,11 +83,13 @@ class Program
                     }
                     break;
                 
-                case 2:     
+                case 2:   
+                    int i = 1;  
                     foreach (Goal goal in goals) {
-                        goal.DisplayGoal();
-                        Console.WriteLine("\n");
+                        goal.DisplayGoal(i);
+                        i++;
                     }
+                    Console.WriteLine();
                     break;
 
 
@@ -104,8 +106,20 @@ class Program
 
                 
                 case 5: 
+                    Console.WriteLine("The Goals are: ");
+                    int l = 1;
+                    foreach (Goal goal in goals) {
+                        goal.DisplayGoal(l);
+                        l++;
+                    }
+                    
+                    Console.Write("Which goal did you accomplish? ");
+                    int goalIndex = int.Parse(Console.ReadLine());
 
+                    int addedPoints = goals[goalIndex - 1].RecordGoal();
+                    points += addedPoints;
 
+                    Console.WriteLine($"You now have {points} points.\n");
                     break;
 
 
@@ -118,7 +132,7 @@ class Program
 
                     
                 default:
-                    Console.WriteLine("Number must be between 1 and 6!");
+                    Console.WriteLine("Invalid Answer! \nNumber must be between 1 and 6!");
                     break;
             }
         }

@@ -32,8 +32,8 @@ public class Goal {
         return _goalPoints;
     }
 
-    public virtual void DisplayGoal() {
-
+    public virtual void DisplayGoal(int num) {
+        
     }
 
     public virtual bool IsComplete() {
