@@ -7,10 +7,18 @@ public class ChecklistGoal : Goal {
     private int timesCompleted;
 
 
-    public ChecklistGoal(string name, string description, int points, int times, int bonusAmount): base(name, description, points) {
-        _bonusNum = times;
-        _bonusAmount = bonusAmount;
+    public ChecklistGoal() {
+        Console.Write("How many times does this goal need to accomplished for a bonus? ");
+        _bonusNum = int.Parse(Console.ReadLine());
+
+        Console.Write("What is the bonus for accomplishing it that many times? ");
+        _bonusAmount = int.Parse(Console.ReadLine());
     }
+    
+    // public ChecklistGoal(string name, string description, int points, int times, int bonusAmount): base(name, description, points) {
+    //     _bonusNum = times;
+    //     _bonusAmount = bonusAmount;
+    // }
 
 
     protected int GetBonusNumber() {

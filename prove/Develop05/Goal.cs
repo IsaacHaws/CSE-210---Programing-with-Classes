@@ -6,12 +6,22 @@ public class Goal {
     private string _goalDescription;
     private int _goalPoints;
 
+    public Goal() {
+        Console.Write("What is the name of your goal? ");
+        _goalName = Console.ReadLine();
 
-    public Goal(string name, string description, int points) {
-        _goalName = name;
-        _goalDescription = description;
-        _goalPoints = points;
+        Console.Write("What is a short description of it? ");
+        _goalDescription = Console.ReadLine();
+
+        Console.Write("What is the amount of points associated with this goal? ");
+        _goalPoints = int.Parse(Console.ReadLine());
     }
+
+    // public Goal(string name, string description, int points) {
+    //     _goalName = name;
+    //     _goalDescription = description;
+    //     _goalPoints = points;
+    // }
 
 
     protected string GetGoalName() {
