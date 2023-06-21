@@ -38,61 +38,17 @@ class Program
                     int goaltype = int.Parse(Console.ReadLine());
 
                     if (goaltype == 1) {
-                        //Old method
-                        // Console.Write("What is the name of your goal? ");
-                        // string goalName = Console.ReadLine();
-
-                        // Console.Write("What is a short description of it? ");
-                        // string goalDescription = Console.ReadLine();
-
-                        // Console.Write("What is the amount of points associated with this goal? ");
-                        // int goalPoints = int.Parse(Console.ReadLine());
-
-                        //goals.Add(new SimpleGoal(goalName, goalDescription, goalPoints, false));
-
-                        //New Method
+                        //Add SimpleGoal to goals list
                         goals.Add(new SimpleGoal(false));
-
-
                     }
 
                     else if (goaltype == 2) {
-                        //Old Method
-                        /*Console.Write("What is the name of your goal? ");
-                        string goalName = Console.ReadLine();
-
-                        Console.Write("What is a short description of it? ");
-                        string goalDescription = Console.ReadLine();
-
-                        Console.Write("What is the amount of points associated with this goal? ");
-                        int goalPoints = int.Parse(Console.ReadLine());
-
-                        goals.Add(new EternalGoal(goalName, goalDescription, goalPoints));*/
-
-                        //New Method
+                        //Add EternalGoal to goals list  
                         goals.Add(new EternalGoal());
                     }
 
                     else if (goaltype == 3) {
-                        //Old Method 
-                        /*Console.Write("What is the name of your goal? ");
-                        string goalName = Console.ReadLine();
-
-                        Console.Write("What is a short description of it? ");
-                        string goalDescription = Console.ReadLine();
-
-                        Console.Write("What is the amount of points associated with this goal? ");
-                        int goalPoints = int.Parse(Console.ReadLine());
-
-                        Console.Write("How many times does this goal need to accomplished for a bonus? ");
-                        int bonusNum = int.Parse(Console.ReadLine());
-
-                        Console.Write("What is the bonus for accomplishing it that many times? ");
-                        int bonusAmount = int.Parse(Console.ReadLine());
-
-                        goals.Add(new ChecklistGoal(goalName, goalDescription, goalPoints, bonusNum, bonusAmount));*/
-
-                        //New Method
+                        //Add CheckListGoal to goals list 
                         goals.Add(new ChecklistGoal());
                     }
                     break;

@@ -17,12 +17,6 @@ public class Goal {
         _goalPoints = int.Parse(Console.ReadLine());
     }
 
-    // public Goal(string name, string description, int points) {
-    //     _goalName = name;
-    //     _goalDescription = description;
-    //     _goalPoints = points;
-    // }
-
 
     protected string GetGoalName() {
         return _goalName;

@@ -9,13 +9,10 @@ public class EternalGoal : Goal {
 
     }
 
-    // public EternalGoal(string name, string description, int points): base(name, description, points) {
-
-    // }
-
-
 
     public override int RecordGoal() {
+        Console.WriteLine($"Congradulations! You have earned {GetGoalPoints()} points!");
+        
         return GetGoalPoints();
     }
 

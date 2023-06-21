@@ -15,10 +15,6 @@ public class ChecklistGoal : Goal {
         _bonusAmount = int.Parse(Console.ReadLine());
     }
     
-    // public ChecklistGoal(string name, string description, int points, int times, int bonusAmount): base(name, description, points) {
-    //     _bonusNum = times;
-    //     _bonusAmount = bonusAmount;
-    // }
 
 
     protected int GetBonusNumber() {
@@ -32,7 +28,20 @@ public class ChecklistGoal : Goal {
 
 
     public override int RecordGoal() {
-        return GetGoalPoints();
+        timesCompleted++;
+        if (IsComplete() == true) {
+            int bonusPoints = GetGoalPoints() + GetBonusAmount();
+            Console.WriteLine($"Congradulations! You have earned {bonusPoints} points!");
+            
+            return bonusPoints;
+        }
+        
+        else {
+            Console.WriteLine($"Congradulations! You have earned {GetGoalPoints()} points!");
+            timesCompleted++;
+
+            return GetGoalPoints();
+        } 
     }
 
     public override void DisplayGoal(int num) {

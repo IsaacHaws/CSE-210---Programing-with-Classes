@@ -9,11 +9,6 @@ public class SimpleGoal : Goal {
     public SimpleGoal(bool completed){
         _completed = completed;
     }
-
-    // public SimpleGoal(string name, string description, int points, bool completed): base(name, description, points) {
-    //     _completed = completed;
-    // }
-
     
 
     public override int RecordGoal() {
