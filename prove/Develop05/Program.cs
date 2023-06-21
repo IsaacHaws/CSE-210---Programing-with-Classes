@@ -64,13 +64,14 @@ class Program
 
 
                 case 3: 
+                    ManageFile save = new ManageFile("save");
 
 
                     break;
                     
                 
                 case 4: 
-
+                    ManageFile load = new ManageFile("load");
 
                     break;
 
