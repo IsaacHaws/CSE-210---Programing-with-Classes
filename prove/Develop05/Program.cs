@@ -13,15 +13,7 @@ class Program
         List<Goal> goals = new List<Goal>();
 
         while (quit != true) {
-            Console.WriteLine($"You have {points} points");
-            Console.WriteLine();
-            Console.WriteLine("Menu Options:");
-            Console.WriteLine("  1. Create New Goal");
-            Console.WriteLine("  2. List Goals");
-            Console.WriteLine("  3. Save Goals");
-            Console.WriteLine("  4. Load Goals");
-            Console.WriteLine("  5. Record Event");
-            Console.WriteLine("  6. Quit");
+            DisplayMenu();
 
             Console.Write("Select a choice from the menu: ");
             int menuAnswer = int.Parse(Console.ReadLine());
@@ -64,14 +56,14 @@ class Program
 
 
                 case 3: 
-                    ManageFile save = new ManageFile("save");
-
+                    ManageFile save = new ManageFile(goals, "save");
+                    
 
                     break;
                     
                 
                 case 4: 
-                    ManageFile load = new ManageFile("load");
+                    ManageFile load = new ManageFile(goals, "load");
 
                     break;
 
@@ -106,6 +98,20 @@ class Program
                     Console.WriteLine("Invalid Answer! \nNumber must be between 1 and 6!");
                     break;
             }
+        }
+    
+        
+        
+        void DisplayMenu() {
+            Console.WriteLine($"You have {points} points");
+            Console.WriteLine();
+            Console.WriteLine("Menu Options:");
+            Console.WriteLine("  1. Create New Goal");
+            Console.WriteLine("  2. List Goals");
+            Console.WriteLine("  3. Save Goals");
+            Console.WriteLine("  4. Load Goals");
+            Console.WriteLine("  5. Record Event");
+            Console.WriteLine("  6. Quit");
         }
     }
 }

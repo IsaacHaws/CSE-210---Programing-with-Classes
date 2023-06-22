@@ -13,6 +13,8 @@ public class ChecklistGoal : Goal {
 
         Console.Write("What is the bonus for accomplishing it that many times? ");
         _bonusAmount = int.Parse(Console.ReadLine());
+
+        Console.WriteLine();
     }
     
 
@@ -32,13 +34,12 @@ public class ChecklistGoal : Goal {
         if (IsComplete() == true) {
             int bonusPoints = GetGoalPoints() + GetBonusAmount();
             Console.WriteLine($"Congradulations! You have earned {bonusPoints} points!");
-            
+
             return bonusPoints;
         }
         
         else {
             Console.WriteLine($"Congradulations! You have earned {GetGoalPoints()} points!");
-            timesCompleted++;
 
             return GetGoalPoints();
         } 
