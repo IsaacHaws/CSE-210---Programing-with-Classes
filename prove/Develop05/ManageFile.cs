@@ -9,7 +9,7 @@ public class ManageFile {
     private string _action;
 
 
-    public ManageFile(List<Goal> goals1, string action) {
+    public ManageFile(List<Goal> goals, string action) {
         Console.WriteLine();
         Console.Write("What is the filename for the goal file? ");
         _filename = Console.ReadLine();
@@ -42,6 +42,8 @@ public class ManageFile {
                 _nameIndex = int.Parse(parts[0]);
                 _descriptionIndex = int.Parse(parts[1]);
                 _pointsIndex = int.Parse(parts[2]);
+
+                
             }
         }
     }
