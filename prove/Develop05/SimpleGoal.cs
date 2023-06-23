@@ -5,8 +5,11 @@ public class SimpleGoal : Goal {
     private bool _completed;
 
 
-
-    public SimpleGoal(bool completed){
+    public SimpleGoal(bool completed) {
+        _completed = completed;
+    }
+    
+    public SimpleGoal(string name, string description, int points, bool completed): base(name, description, points) {
         _completed = completed;
     }
     
@@ -26,7 +29,6 @@ public class SimpleGoal : Goal {
         else {
             Console.WriteLine($"{num}. [ ] {GetGoalName()} ({GetGoalDescription()})");
         }
-        
     }
 
     public override bool IsComplete() {
@@ -36,5 +38,9 @@ public class SimpleGoal : Goal {
         else {
             return false;
         }
+    }
+
+    public override string WriteGoal() {
+        return $"SimpleGoal:{GetGoalName()},{GetGoalDescription()},{GetGoalPoints()},{IsComplete()}";
     }
 }

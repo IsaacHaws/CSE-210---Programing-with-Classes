@@ -16,6 +16,11 @@ public class ChecklistGoal : Goal {
 
         Console.WriteLine();
     }
+
+    public ChecklistGoal(string name, string description, int points, int bonusNum, int bonusAmount): base(name, description, points) {
+        _bonusNum = bonusNum;
+        _bonusAmount = bonusAmount;
+    }
     
 
 
@@ -46,7 +51,13 @@ public class ChecklistGoal : Goal {
     }
 
     public override void DisplayGoal(int num) {
-        Console.WriteLine($"{num}. [ ] {GetGoalName()} ({GetGoalDescription()}) -- Currently Completed: {timesCompleted}/{GetBonusNumber()}");
+        if (IsComplete() == false) {
+            Console.WriteLine($"{num}. [ ] {GetGoalName()} ({GetGoalDescription()}) -- Currently Completed: {timesCompleted}/{GetBonusNumber()}");
+        }
+        else {
+            Console.WriteLine($"{num}. [X] {GetGoalName()} ({GetGoalDescription()}) -- Currently Completed: {timesCompleted}/{GetBonusNumber()}");
+        }
+        
     }
 
     public override bool IsComplete() {
@@ -56,5 +67,9 @@ public class ChecklistGoal : Goal {
         else {
             return false;
         }
+    }
+
+    public override string WriteGoal() {
+        return $"ChecklistGoal:{GetGoalName()},{GetGoalDescription()},{GetGoalPoints()},{GetBonusNumber()},{GetBonusAmount()}";
     }
 }

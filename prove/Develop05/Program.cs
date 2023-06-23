@@ -56,15 +56,12 @@ class Program
 
 
                 case 3: 
-                    ManageFile save = new ManageFile(goals, "save");
-                    
-
+                    ManageFile save = new ManageFile(goals, points, "save");
                     break;
                     
                 
                 case 4: 
-                    ManageFile load = new ManageFile(goals, "load");
-
+                    ManageFile load = new ManageFile(goals, points, "load");
                     break;
 
                 
@@ -72,7 +69,7 @@ class Program
                     Console.WriteLine("The Goals are: ");
                     int l = 1;
                     foreach (Goal goal in goals) {
-                        goal.DisplayGoal(l);
+                        goal.DisplayPartGoal(l);
                         l++;
                     }
                     

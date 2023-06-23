@@ -3,25 +3,31 @@ using System.IO;
 public class ManageFile {
     private string _filename;
     private string[] _lines;
-    private int _nameIndex;
-    private int _descriptionIndex;
-    private int _pointsIndex;
+    private string _name;
+    private string _description;
+    private int _points;
     private string _action;
+    private string _goalType;
 
 
-    public ManageFile(List<Goal> goals, string action) {
+    public ManageFile(List<Goal> goals, int points, string action) {
         Console.WriteLine();
         Console.Write("What is the filename for the goal file? ");
         _filename = Console.ReadLine();
 
         Console.WriteLine();
 
+        _points = points;
         _action = action;
 
         if (_action == "save") {
             using (StreamWriter outputFile = new StreamWriter(_filename))
             {   
-
+                outputFile.WriteLine(_points);
+                foreach (Goal goal in goals)
+                {
+                   outputFile.WriteLine(goal.WriteGoal());
+                }
             }
         } 
 
@@ -32,38 +38,38 @@ public class ManageFile {
             {
                 string[] splitParts = line.Split(":");
 
-                string goalType = splitParts[0];
+                _goalType = splitParts[0];
                 string goalInfo = splitParts[1];
 
                 
                 string[] parts = goalInfo.Split(",");
                 
-                
-                _nameIndex = int.Parse(parts[0]);
-                _descriptionIndex = int.Parse(parts[1]);
-                _pointsIndex = int.Parse(parts[2]);
+                _name = parts[0];
+                _description = parts[1];
+                _points = int.Parse(parts[2]);
 
-                
+                if (_goalType == "ChecklistGoal") {
+                    int bonustimes = int.Parse(parts[3]);
+                    int bonusNum = int.Parse(parts[4]);
+
+                    AddGoal(goals, _name, _description, _points, bonustimes, bonusNum);
+                }
+                else {
+                    AddGoal(goals, _name, _description, _points);
+                }
             }
         }
     }
 
-
-    public void AddGoal(int totalPoints, string name, string description, int goalPoints) {
-        
-    }
-
-
-
-    public string GetName() {
-        return "";
-    }
-
-    public string GetDescription() {
-        return "";
-    }
-
-    public int GetPoints() {
-        return 0;
+    public void AddGoal(List<Goal> goals, string name, string description, int points, int times = 0, int bonusAmount = 0) {
+        if (_goalType == "SimpleGoal") {
+            goals.Add(new SimpleGoal(name, description, points, false));
+        }
+        else if (_goalType == "EternalGoal") {
+            goals.Add(new EternalGoal(name, description, points));
+        }
+        else if (_goalType == "ChecklistGoal") {
+            goals.Add(new ChecklistGoal(name, description, points, times, bonusAmount));
+        }   
     }
 }

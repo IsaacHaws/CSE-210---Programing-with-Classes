@@ -1,2 +1,3 @@
-
-My favorite color is Blue
+SimpleGoal:Read a book,Finish a book,50,False
+EternalGoal:Go to church,Attend both hours,100
+ChecklistGoal:Spin Staff,Spin staff once a day,50,3,100

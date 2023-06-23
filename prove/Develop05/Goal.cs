@@ -17,8 +17,14 @@ public class Goal {
         _goalPoints = int.Parse(Console.ReadLine());
     }
 
+    public Goal(string name, string description, int points) {
+        _goalName = name;
+        _goalDescription = description;
+        _goalPoints = points;
+    }
 
-    protected string GetGoalName() {
+
+    public string GetGoalName() {
         return _goalName;
     }
 
@@ -37,11 +43,18 @@ public class Goal {
     }
 
     public virtual void DisplayGoal(int num) {
-        
+        Console.WriteLine($"{num}. [ ] {GetGoalName()} ({GetGoalDescription()})");
+    }
+
+    public virtual void DisplayPartGoal(int num) {
+        Console.WriteLine($"{num}. {GetGoalName()}");
     }
 
     public virtual bool IsComplete() {
         return false;
     }
 
+    public virtual string WriteGoal() {
+        return "";
+    }
 }
