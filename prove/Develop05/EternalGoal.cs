@@ -28,6 +28,6 @@ public class EternalGoal : Goal {
     }
 
     public override string WriteGoal() {
-        return $"EternalGoal:{GetGoalName()},{GetGoalDescription()},{GetGoalPoints()}";
+        return $"EternalGoal:{GetGoalName()},{GetGoalDescription()},{GetGoalPoints()}, {IsComplete()}";
     }
 }

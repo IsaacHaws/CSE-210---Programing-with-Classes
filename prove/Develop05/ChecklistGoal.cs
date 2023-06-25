@@ -4,7 +4,7 @@ using System;
 public class ChecklistGoal : Goal {
     private int _bonusNum;
     private int _bonusAmount;
-    private int timesCompleted;
+    private int _timesCompleted;
 
 
     public ChecklistGoal() {
@@ -17,9 +17,10 @@ public class ChecklistGoal : Goal {
         Console.WriteLine();
     }
 
-    public ChecklistGoal(string name, string description, int points, int bonusNum, int bonusAmount): base(name, description, points) {
+    public ChecklistGoal(string name, string description, int points, int bonusNum, int timesCompleted, int bonusAmount): base(name, description, points) {
         _bonusNum = bonusNum;
         _bonusAmount = bonusAmount;
+        _timesCompleted = timesCompleted;
     }
     
 
@@ -32,10 +33,14 @@ public class ChecklistGoal : Goal {
         return _bonusAmount;
     }
 
+    protected int GetTimesCompleted() {
+        return _timesCompleted;
+    }
+
 
 
     public override int RecordGoal() {
-        timesCompleted++;
+        _timesCompleted++;
         if (IsComplete() == true) {
             int bonusPoints = GetGoalPoints() + GetBonusAmount();
             Console.WriteLine($"Congradulations! You have earned {bonusPoints} points!");
@@ -52,16 +57,16 @@ public class ChecklistGoal : Goal {
 
     public override void DisplayGoal(int num) {
         if (IsComplete() == false) {
-            Console.WriteLine($"{num}. [ ] {GetGoalName()} ({GetGoalDescription()}) -- Currently Completed: {timesCompleted}/{GetBonusNumber()}");
+            Console.WriteLine($"{num}. [ ] {GetGoalName()} ({GetGoalDescription()}) -- Currently Completed: {_timesCompleted}/{GetBonusNumber()}");
         }
         else {
-            Console.WriteLine($"{num}. [X] {GetGoalName()} ({GetGoalDescription()}) -- Currently Completed: {timesCompleted}/{GetBonusNumber()}");
+            Console.WriteLine($"{num}. [X] {GetGoalName()} ({GetGoalDescription()}) -- Currently Completed: {_timesCompleted}/{GetBonusNumber()}");
         }
         
     }
 
     public override bool IsComplete() {
-        if (timesCompleted >= GetBonusNumber()) {
+        if (_timesCompleted >= GetBonusNumber()) {
             return true;
         }
         else {
@@ -70,6 +75,6 @@ public class ChecklistGoal : Goal {
     }
 
     public override string WriteGoal() {
-        return $"ChecklistGoal:{GetGoalName()},{GetGoalDescription()},{GetGoalPoints()},{GetBonusNumber()},{GetBonusAmount()}";
+        return $"ChecklistGoal:{GetGoalName()},{GetGoalDescription()},{GetGoalPoints()},{GetBonusNumber()},{GetTimesCompleted()},{GetBonusAmount()}";
     }
 }

@@ -1,3 +1,4 @@
-SimpleGoal:Read a book,Finish a book,50,False
-EternalGoal:Go to church,Attend both hours,100
-ChecklistGoal:Spin Staff,Spin staff once a day,50,3,100
+95
+SimpleGoal:Read bool,Read one book,50,True
+EternalGoal:Go to church,Attend both hours,100, False
+ChecklistGoal:Spin staff,Spin staff once a day,45,3,1,100

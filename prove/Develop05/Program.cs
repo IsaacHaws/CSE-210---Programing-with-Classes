@@ -18,7 +18,6 @@ class Program
             Console.Write("Select a choice from the menu: ");
             int menuAnswer = int.Parse(Console.ReadLine());
             
-
             switch (menuAnswer)
             {
                 case 1: 
@@ -62,6 +61,7 @@ class Program
                 
                 case 4: 
                     ManageFile load = new ManageFile(goals, points, "load");
+                    points = load.GetTotalPoints();
                     break;
 
                 
