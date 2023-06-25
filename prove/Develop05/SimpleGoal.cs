@@ -40,7 +40,7 @@ public class SimpleGoal : Goal {
             return false;
         }
     }
-
+    
     public override string WriteGoal() {
         return $"SimpleGoal:{GetGoalName()},{GetGoalDescription()},{GetGoalPoints()},{IsComplete()}";
     }

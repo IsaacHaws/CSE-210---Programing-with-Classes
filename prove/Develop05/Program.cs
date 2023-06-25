@@ -15,12 +15,15 @@ class Program
         while (quit != true) {
             DisplayMenu();
 
+            //Get menu input
             Console.Write("Select a choice from the menu: ");
             int menuAnswer = int.Parse(Console.ReadLine());
             
+            //Switch statment to handle menu input
             switch (menuAnswer)
             {
                 case 1: 
+                    //Print goal menu and get user input
                     Console.WriteLine("The types of Goals are:");
                     Console.WriteLine("  1. Simple Goal");
                     Console.WriteLine("  2. Eternal Goal");
@@ -44,6 +47,7 @@ class Program
                     }
                     break;
                 
+                //List goals
                 case 2:   
                     int i = 1; 
                     Console.WriteLine("The goals are:");
@@ -55,18 +59,22 @@ class Program
                     break;
 
 
+                //Save goals
                 case 3: 
                     ManageFile save = new ManageFile(goals, points, "save");
                     break;
                     
                 
+                //Load goals
                 case 4: 
                     ManageFile load = new ManageFile(goals, points, "load");
                     points = load.GetTotalPoints();
                     break;
 
                 
+                //Record goals
                 case 5: 
+                    //Print goals
                     Console.WriteLine("The goals are: ");
                     int l = 1;
                     foreach (Goal goal in goals) {
@@ -74,16 +82,20 @@ class Program
                         l++;
                     }
                     
+                    //Ask which goal is to be recorded
                     Console.Write("Which goal did you accomplish? ");
                     int goalIndex = int.Parse(Console.ReadLine());
 
+                    //Record selected goal and get points 
                     int addedPoints = goals[goalIndex - 1].RecordGoal();
                     points += addedPoints;
-
+                    
+                    //Print new point amount
                     Console.WriteLine($"You now have {points} points.\n");
                     break;
 
-
+                
+                //End program
                 case 6: 
                     Console.WriteLine();
                     Console.WriteLine("GoodBye");
@@ -91,7 +103,7 @@ class Program
                     quit = true;
                     break;
 
-                    
+                  
                 default:
                     Console.WriteLine("Invalid Answer! \nNumber must be between 1 and 6!");
                     break;
@@ -99,7 +111,7 @@ class Program
         }
     
         
-        
+        //Function to print menu
         void DisplayMenu() {
             Console.WriteLine($"You have {points} points");
             Console.WriteLine();

@@ -6,7 +6,7 @@ public class ChecklistGoal : Goal {
     private int _bonusAmount;
     private int _timesCompleted;
 
-
+    //Constructor to ask additional questions for checklist goal
     public ChecklistGoal() {
         Console.Write("How many times does this goal need to accomplished for a bonus? ");
         _bonusNum = int.Parse(Console.ReadLine());
@@ -17,6 +17,7 @@ public class ChecklistGoal : Goal {
         Console.WriteLine();
     }
 
+    //Constructor to get additional questions for checklist goal
     public ChecklistGoal(string name, string description, int points, int bonusNum, int timesCompleted, int bonusAmount): base(name, description, points) {
         _bonusNum = bonusNum;
         _bonusAmount = bonusAmount;
@@ -24,7 +25,7 @@ public class ChecklistGoal : Goal {
     }
     
 
-
+    //Addition methods for class
     protected int GetBonusNumber() {
         return _bonusNum;
     }

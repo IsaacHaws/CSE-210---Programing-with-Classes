@@ -14,6 +14,7 @@ public class ManageFile {
 
 
     public ManageFile(List<Goal> goals, int totalPoints, string action) {
+        //Get file name
         Console.WriteLine();
         Console.Write("What is the filename for the goal file? ");
         _filename = Console.ReadLine();

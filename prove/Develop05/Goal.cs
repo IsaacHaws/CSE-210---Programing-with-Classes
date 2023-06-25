@@ -6,6 +6,7 @@ public class Goal {
     private string _goalDescription;
     private int _goalPoints;
 
+    //A construtor that asks for values
     public Goal() {
         Console.Write("What is the name of your goal? ");
         _goalName = Console.ReadLine();
@@ -17,6 +18,7 @@ public class Goal {
         _goalPoints = int.Parse(Console.ReadLine());
     }
 
+    //A constructor that get values through paramters
     public Goal(string name, string description, int points) {
         _goalName = name;
         _goalDescription = description;
@@ -24,6 +26,7 @@ public class Goal {
     }
 
 
+    //Class methods
     public string GetGoalName() {
         return _goalName;
     }
@@ -37,23 +40,27 @@ public class Goal {
     }
 
 
-
+    //Overide Methods
     public virtual int RecordGoal() {
         return _goalPoints;
     }
 
+    //Print goal number, name, and description
     public virtual void DisplayGoal(int num) {
         Console.WriteLine($"{num}. [ ] {GetGoalName()} ({GetGoalDescription()})");
     }
 
+    //Print Goal number and name
     public virtual void DisplayPartGoal(int num) {
         Console.WriteLine($"{num}. {GetGoalName()}");
     }
 
+    //Method to return if goal is complete
     public virtual bool IsComplete() {
         return false;
     }
 
+    //Method to write goal to file
     public virtual string WriteGoal() {
         return "";
     }
