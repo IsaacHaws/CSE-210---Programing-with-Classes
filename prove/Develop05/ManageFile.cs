@@ -71,30 +71,28 @@ public class ManageFile {
                 //And then split the goal information by "," to get the nedded values
                 string[] parts = _goalInfo.Split(",");
                 
-                if (_goalType == "SimpleGoal" | _goalType == "EternalGoal") {
-                    //Get values by index
-                    _name = parts[0];
-                    _description = parts[1];
-                    _goalPoints = int.Parse(parts[2]);
-                    bool completed = bool.Parse(parts[3]);
-                    
-                    //Add a new goal to the goals list with the information gained by spliting the current line
-                    AddGoal(goals, _name, _description, _goalPoints, completed);
-                }
-                
-                else {
-                    //If the goal type is "ChecklistGoal", get three extra values.
-                    //1. How many times the goal needs to be completed
-                    //2. How many times it has been completed
-                    //3. The number of bonus points when completed
-                    bool completed = false;
-                    int bonustimes = int.Parse(parts[3]);
-                    int timesCompleted = int.Parse(parts[4]);
-                    int bonusNum = int.Parse(parts[5]);
+                //Get values by index
+                _name = parts[0];
+                _description = parts[1];
+                _goalPoints = int.Parse(parts[2]);
+                bool completed = bool.Parse(parts[3]);
+
+                //If the goal type is "ChecklistGoal", get three extra values.
+                //1. How many times the goal needs to be completed
+                //2. How many times it has been completed
+                //3. The number of bonus points when completed
+                if (_goalType == "ChecklistGoal") {
+                    int bonustimes = int.Parse(parts[4]);
+                    int timesCompleted = int.Parse(parts[5]);
+                    int bonusNum = int.Parse(parts[6]);
 
                     //Add a new goal to the goals list with the information gained by spliting the current line
                     //including the the 3 extra values
                     AddGoal(goals, _name, _description, _goalPoints, completed, bonustimes, timesCompleted, bonusNum);
+                }
+                else {
+                    //Add a new goal to the goals list with the information gained by spliting the current line
+                    AddGoal(goals, _name, _description, _goalPoints, completed);
                 }
             }
         }

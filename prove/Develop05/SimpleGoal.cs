@@ -6,6 +6,7 @@ public class SimpleGoal : Goal {
 
 
     public SimpleGoal(bool completed) {
+        Console.WriteLine();
         _completed = completed;
     }
     

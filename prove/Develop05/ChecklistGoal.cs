@@ -75,6 +75,6 @@ public class ChecklistGoal : Goal {
     }
 
     public override string WriteGoal() {
-        return $"ChecklistGoal:{GetGoalName()},{GetGoalDescription()},{GetGoalPoints()},{GetBonusNumber()},{GetTimesCompleted()},{GetBonusAmount()}";
+        return $"ChecklistGoal:{GetGoalName()},{GetGoalDescription()},{GetGoalPoints()},{IsComplete()},{GetBonusNumber()},{GetTimesCompleted()},{GetBonusAmount()}";
     }
 }

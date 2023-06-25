@@ -45,7 +45,8 @@ class Program
                     break;
                 
                 case 2:   
-                    int i = 1;  
+                    int i = 1; 
+                    Console.WriteLine("The goals are:");
                     foreach (Goal goal in goals) {
                         goal.DisplayGoal(i);
                         i++;
@@ -66,7 +67,7 @@ class Program
 
                 
                 case 5: 
-                    Console.WriteLine("The Goals are: ");
+                    Console.WriteLine("The goals are: ");
                     int l = 1;
                     foreach (Goal goal in goals) {
                         goal.DisplayPartGoal(l);

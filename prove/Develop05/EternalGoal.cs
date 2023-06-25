@@ -5,11 +5,11 @@ public class EternalGoal : Goal {
 
     
     public EternalGoal() {
-
+        Console.WriteLine();
     }
     
     public EternalGoal(string name, string description, int points): base(name, description, points) {
-
+        
     }
 
 
