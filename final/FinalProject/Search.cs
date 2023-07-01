@@ -5,7 +5,7 @@ public class Search {
     private string _searchValue;
 
 
-    public Search(Dictionary<string, Part> items, string value) {
+    public Search(List<Part> items, string value) {
         _searchValue = value;
     }
 

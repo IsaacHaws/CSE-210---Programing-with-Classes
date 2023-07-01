@@ -2,7 +2,7 @@ using System;
 
 
 public class Resistor : Part {
-    protected string _resistance;
+    private string _resistance;
     private string _powerWatts;
     
     public Resistor() {
@@ -34,10 +34,10 @@ public class Resistor : Part {
     }
 
     public override string GetInfo() {
-        return "";
+        return $"{GetManufacturer()},{GetPackage()},{GetTolerance()}, {GetResistance()}, {GetPowerWatts()}";
     }
 
     public override void DisplayPart() {
-
+        Console.WriteLine($"Manufacturer: {GetManufacturer()} Package: {GetPackage()} Tolerance: {GetTolerance()} Resistance: {GetResistance()} Power: {GetPowerWatts()}");
     }
 }

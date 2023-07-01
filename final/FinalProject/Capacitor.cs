@@ -2,13 +2,20 @@ using System;
 
 
 public class Capacitor : Part {
-    protected string _capacitance;
+    private string _capacitance;
     private string _ratedVoltage;
     private string _tempCoefficient;
 
     
     public Capacitor() {
-        
+        Console.Write("What is the capacitance of the capacitor? ");
+        _capacitance = Console.ReadLine();
+
+        Console.Write("What is the rated voltage of the capacitor? ");
+        _capacitance = Console.ReadLine();
+
+        Console.Write("What is the temperture coefficient value of the capacitor? ");
+        _tempCoefficient = Console.ReadLine();
     }
     
     public Capacitor(string maker, string package, string tolerance, string capacitance, string ratedVoltage, string tempCoefficient, int quantity): base(maker, package, tolerance, quantity) {

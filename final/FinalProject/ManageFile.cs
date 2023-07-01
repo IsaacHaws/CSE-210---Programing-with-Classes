@@ -9,7 +9,7 @@ public class ManageFile {
     private string _itemInfo;
 
 
-    public ManageFile(Dictionary<string, Part> items, string action) {
+    public ManageFile(List<Part> items, string action) {
         _action = action;
     }
 

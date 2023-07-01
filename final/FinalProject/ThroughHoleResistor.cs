@@ -6,7 +6,12 @@ public class ThroughHoleResistor : Resistor {
 
 
     public ThroughHoleResistor() {
-        
+        Console.Write("What is the temperture coefficient value of the resistor? ");
+        _tempCoefficient = Console.ReadLine();
+    }
+    
+    public ThroughHoleResistor(string maker, string package, string tolerance, string resistance, string powerWatts, string tempCoefficient, int quantity): base(maker, package, tolerance, resistance, powerWatts, quantity) {
+        _tempCoefficient = tempCoefficient;
     }
 
 

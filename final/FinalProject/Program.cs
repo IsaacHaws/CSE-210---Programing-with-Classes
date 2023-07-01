@@ -4,9 +4,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        //www.plantuml.com/plantuml/png/jLJ1QXin4BthAmIvs3Z-0HDAWjEqXOO6nwI7KeAg7TiYMkrMqhgODlzUQUKTZxMkCSIzhPvcdjwycTbhvuNrJQcPrC8v_X1E_3SRFvV2D0iXVMF1JhZpLfbbW6iXNyGI2E8h3LOOIR6VZJ1U-Ss4A-CP6qNMmR3xI66y52zWB_dsj2N6Cz9UHWxUCGQIYm_WxucwmH1VZbSFYIX3vnqTmTdefYYYeeYjArMmKOZyP1OL2HhTAbThiTcBUsMiDUhgptZCP-2KyvKbq5I4SbJ4MF8LWuAt5y-sFMIUrTKli5-5zuu8xD8wptQPm_xjwOwo7jqk2sLanayu-o4S3D8Zo4vfioRDa3rl4Rvnhcumz3Vvlr9rXsHNyvMjckNgOr3TNM2JKXesYeqGEDo22MyT8SXRga0P1oIsA-cXhASLB1PAAZ2UE9Tbd2utxSO-Bn5wXcfm5zBeotJAPjyA3yLJfJtzjHmh64cxCWdlaDw_wMU3zuITB4yKlOwYAHDAzb5ov_dfIvEK7zgQ6J69Nls_3YOjk3htZVOgX86TWXMbadd0ZMvAPPholGRfRMMKn2devRRxrK_8-add5g5pxLd_zNRDgXgiy24_kagcKOCe7eE4SDf3pTAl43XMq_4Pn1qu_i-cplnhwX3VAmLHKWXYgOpXvE0_FjD6H54nhGgvcyBjG7-X6hAv_RnJqhk9UixyAte4OUMgRR9hFv-4Re0yaG86jqfwLHbXDrVfwf97ndTSUIWTUhQEsN4KxvJfIuj09kyLjq6OuEITqj2AMOGF8qgWOwKCkExyxNj0HAk9X4GnyqqD6HJVH2Y8sxrrQbtf9R9ZnCfhC4LJwhy0
-        
-        //var items = new Dictionary<string, Part>();
+        //www.plantuml.com/plantuml/png/pLJHRjGm47ptLqJY9T6rFr1Lg5MXWDIAggtA0qB8E7izguuJx4tH2VhlsF5bRyzt845pWhViP3qxcOdtnADqs3T6A2EzBwv2LNmNXvyRQVkvLDWxS4U5HwVjVO0xgHxaFJ04MmDEMiMnhxsqg75vL6YBGimYQrcD3wcjQEG3k8DYLQs8gIRQWyXHZ8o1vCKRm4kchgneSdnrbOWoz7QaOxYOdTPrL1InnrRNOXOwtzbvovfchxJlZ5nkz3q9CHXr_EFmiBW6hpssZa5difDAHqmaNwbfyDODHUPPrtu3zq4YUYPmF5PMlFXJ0yKAMi-bhlNKpEUZGdoH7ieqXDWvRPR9DR7dYT2CgSmNP6UoUw6x4SbUtIvSszyltWRLr35caevHBcB6WR8YuFzodTDn7k9uZhNaJUOR_Re8JNVMmdokbGQBBCxi17d8yFrQIL2cSHyMfvsoEOUPEq42j4EIxofLsSvm4g6-QmtobVoxa8YqhAXwJY1C5hKDeXwJg1sPu5zbadkVfE_QDjVC4_vgVu4bBRHoBdk3EhI1EmCd6wtoXbFJDzhspMi32brhjQBGjyuEUsaBBQkTwCGfaetJtIm-AHknnKsynIJtQTlruMAr7JY9uNpyETWTCY3hco0sLFmloKbI53dyBx8WXeqledRsFNkFZL_KzrnDTXylrfecNfut89rQ307xuV5EcXxOYDHGNcYFnv7ZPQ4H6azsFSR-6EsvjjjY0f0BUg8hB6qmvbmR6CRFmuEL3V1VIrlmO_tnKq2aGjrQrXB5t2uxoA0uaw0WRZthrr-Ik2kobTjr0hRk6_CJ
         
         List<Part> items = new List<Part>();
         
@@ -22,7 +20,7 @@ class Program
             Console.WriteLine(" 3. List Items");
             Console.WriteLine(" 4. Search Item");
             Console.WriteLine(" 5. Load File");
-            Console.WriteLine(" 6. Quit");
+            Console.WriteLine(" 6. Save and Quit");
 
             Console.Write("What would you like to do? ");
             int menuAnswer = int.Parse(Console.ReadLine());
