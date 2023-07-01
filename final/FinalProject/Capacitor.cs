@@ -7,11 +7,11 @@ public class Capacitor : Part {
     private string _tempCoefficient;
 
     
-    public Capacitor(string capacitance) {
-        _capacitance = capacitance;
+    public Capacitor() {
+        
     }
     
-    public Capacitor(string maker, string package, string tolerance, string capacitance, string ratedVoltage, string tempCoefficient): base(maker, package, tolerance) {
+    public Capacitor(string maker, string package, string tolerance, string capacitance, string ratedVoltage, string tempCoefficient, int quantity): base(maker, package, tolerance, quantity) {
         _capacitance = capacitance;
         _ratedVoltage = ratedVoltage;
         _tempCoefficient = tempCoefficient;

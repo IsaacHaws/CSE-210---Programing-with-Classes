@@ -4,8 +4,12 @@ using System;
 public class ChipResistor : Resistor {
 
 
-    public ChipResistor(string resistance): base(resistance) {
-        _resistance = resistance;
+    public ChipResistor() {
+        
+    }
+
+    public ChipResistor(string maker, string package, string tolerance, string resistance, string powerWatts, int quantity): base(maker, package, tolerance, resistance, powerWatts, quantity) {
+
     }
 
     public override void AddPart() {

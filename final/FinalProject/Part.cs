@@ -5,6 +5,7 @@ public class Part {
     private string _manufacturer;
     private string _package;
     private string _tolerance;
+    private int _quantity;
 
 
     public Part() {
@@ -16,12 +17,16 @@ public class Part {
 
         Console.Write("What is the tolerance of the part? ");
         _tolerance = Console.ReadLine();
+
+        Console.Write("How many would you like to add to your invertory? ");
+        _quantity = int.Parse(Console.ReadLine());
     }
 
-    public Part(string maker, string package, string tolerance) {
+    public Part(string maker, string package, string tolerance, int quantity) {
         _manufacturer = maker;
         _package = package;
         _tolerance = tolerance;
+        _quantity = quantity;
     }
 
     

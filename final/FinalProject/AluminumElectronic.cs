@@ -7,8 +7,8 @@ public class AluminumElectronic : Capacitor {
     private string _length;
 
 
-    public AluminumElectronic(string capacitance): base(capacitance) {
-        _capacitance = capacitance;
+    public AluminumElectronic() {
+        
     }
 
     public string GetOperatingTemp() {

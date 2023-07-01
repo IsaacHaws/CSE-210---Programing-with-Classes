@@ -5,8 +5,8 @@ public class ThroughHoleResistor : Resistor {
     private string _tempCoefficient;
 
 
-    public ThroughHoleResistor(string resistance): base(resistance) {
-        _resistance = resistance;
+    public ThroughHoleResistor() {
+        
     }
 
 

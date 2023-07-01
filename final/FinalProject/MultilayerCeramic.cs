@@ -4,8 +4,8 @@ using System;
 public class MultilayerCeramic : Capacitor {
 
 
-    public MultilayerCeramic(string capacitance): base(capacitance) {
-        _capacitance = capacitance;
+    public MultilayerCeramic() {
+       
     }
     
     public override void AddPart() {
