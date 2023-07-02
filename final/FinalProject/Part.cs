@@ -52,7 +52,7 @@ public class Part {
         return $"{GetManufacturer()},{GetPackage()},{GetTolerance()}";
     }
 
-    public virtual void DisplayPart() {
-        Console.WriteLine($"Manufacturer: {GetManufacturer()} Package: {GetPackage()} Tolerance: {GetTolerance()}");
+    public virtual string DisplayPart() {
+        return $"Manufacturer: {GetManufacturer()} Package: {GetPackage()} Tolerance: {GetTolerance()}";
     }
 }

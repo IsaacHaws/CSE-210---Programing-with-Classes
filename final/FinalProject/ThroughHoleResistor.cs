@@ -28,7 +28,7 @@ public class ThroughHoleResistor : Resistor {
         return "";
     }
 
-    public override void DisplayPart() {
-
+    public override string DisplayPart() {
+        return "";
     }
 }

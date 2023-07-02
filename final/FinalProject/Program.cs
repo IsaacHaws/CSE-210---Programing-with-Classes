@@ -61,11 +61,18 @@ class Program
                     break;
                 
                 case 2:
-                    Console.WriteLine("Case 2");
+                    int i = 0;
+                    foreach (var item in items) {
+                        Console.WriteLine($"[{i}]{item.DisplayPart()}");
+                        i++;
+                    }
+                    
                     break;
                 
                 case 3:
-                    Console.WriteLine("Case 3");
+                    foreach (var item in items) {
+                        item.DisplayPart();
+                    }
                     break;
                 
                 case 4:
@@ -77,7 +84,8 @@ class Program
                     break;
 
                 case 6:
-                    Console.WriteLine("Case");
+                    Console.WriteLine("Goodbye");
+                    quit = false;
                     break;
                 
                 default:

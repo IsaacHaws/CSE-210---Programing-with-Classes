@@ -48,7 +48,7 @@ public class Capacitor : Part {
         return "";
     }
 
-    public override void DisplayPart() {
-
+    public override string DisplayPart() {
+        return "";
     }
 }

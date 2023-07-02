@@ -37,7 +37,7 @@ public class Resistor : Part {
         return $"{GetManufacturer()},{GetPackage()},{GetTolerance()}, {GetResistance()}, {GetPowerWatts()}";
     }
 
-    public override void DisplayPart() {
-        Console.WriteLine($"Manufacturer: {GetManufacturer()} Package: {GetPackage()} Tolerance: {GetTolerance()} Resistance: {GetResistance()} Power: {GetPowerWatts()}");
+    public override string DisplayPart() {
+        return $"Resistor : Manufacturer: {GetManufacturer()} Package: {GetPackage()} Tolerance: {GetTolerance()} Resistance: {GetResistance()} Power: {GetPowerWatts()}";
     }
 }

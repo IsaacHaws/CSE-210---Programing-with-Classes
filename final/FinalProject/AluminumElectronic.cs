@@ -34,7 +34,7 @@ public class AluminumElectronic : Capacitor {
         return "";
     }
 
-    public override void DisplayPart() {
-
+    public override string DisplayPart() {
+        return "";
     }
 }
