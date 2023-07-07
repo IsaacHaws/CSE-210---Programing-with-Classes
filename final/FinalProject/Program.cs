@@ -61,12 +61,14 @@ class Program
                     break;
                 
                 case 2:
-                    int i = 0;
+                    int i = 1;
                     foreach (var item in items) {
                         Console.WriteLine($"[{i}]{item.DisplayPart()}");
                         i++;
                     }
                     
+                    Console.Write("Which item would you like to remove? ");
+                    items.RemoveAt(int.Parse(Console.ReadLine()) - 1);
                     break;
                 
                 case 3:
