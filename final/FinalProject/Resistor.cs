@@ -34,10 +34,16 @@ public class Resistor : Part {
     }
 
     public override string GetInfo() {
-        return $"{GetManufacturer()},{GetPackage()},{GetTolerance()}, {GetResistance()}, {GetPowerWatts()}";
+        return $"{GetManufacturer()},{GetPackage()},{GetTolerance()},{GetResistance()},{GetPowerWatts()},{GetQuantity()}";
     }
 
-    public override string DisplayPart() {
-        return $"Resistor : Manufacturer: {GetManufacturer()} Package: {GetPackage()} Tolerance: {GetTolerance()} Resistance: {GetResistance()} Power: {GetPowerWatts()}";
+    public override void DisplayPart(int num) {
+        Console.WriteLine($"[{num}]. Resistor\n" + 
+        $"  Manufacturer: {GetManufacturer()}\n" +  
+        $"  Package: {GetPackage()}\n" + 
+        $"  Tolerance: {GetTolerance()}\n" +
+        $"  Resistance: {GetResistance()}\n" +
+        $"  Power: {GetPowerWatts()}\n" +
+        $"  Quantity: {GetQuantity()}\n");
     }
 }

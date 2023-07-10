@@ -63,7 +63,7 @@ class Program
                 case 2:
                     int i = 1;
                     foreach (var item in items) {
-                        Console.WriteLine($"[{i}]{item.DisplayPart()}");
+                        item.DisplayPart(i);
                         i++;
                     }
                     
@@ -72,8 +72,11 @@ class Program
                     break;
                 
                 case 3:
+                    int l = 1;
+                    Console.WriteLine("The parts are:");
                     foreach (var item in items) {
-                        item.DisplayPart();
+                        item.DisplayPart(l);
+                        l++;
                     }
                     break;
                 

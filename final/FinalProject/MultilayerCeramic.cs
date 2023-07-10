@@ -21,7 +21,14 @@ public class MultilayerCeramic : Capacitor {
         return "";
     }
 
-    public override string DisplayPart() {
-        return "";
+    public override void DisplayPart(int num) {
+        Console.WriteLine($"[{num}]. MultilayerCeramic\n" + 
+        $"  Manufacturer: {GetManufacturer()}\n" +  
+        $"  Package: {GetPackage()}\n" + 
+        $"  Tolerance: {GetTolerance()}\n" +
+        $"  Capacitance: {GetCapacitance()}\n" +
+        $"  Rated Voltage: {GetRatedVoltage()}\n" +
+        $"  Temperature Coefficient: {GetTempCoefficient()}\n" +
+        $"  Quantity: {GetQuantity()}\n");
     }
 }

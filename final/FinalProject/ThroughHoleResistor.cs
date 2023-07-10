@@ -25,10 +25,17 @@ public class ThroughHoleResistor : Resistor {
     }
 
     public override string GetInfo() {
-        return "";
+        return $"{GetManufacturer()},{GetPackage()},{GetTolerance()},{GetResistance()},{GetPowerWatts()},{GetTempCoefficient()},{GetQuantity()}";
     }
 
-    public override string DisplayPart() {
-        return "";
+    public override void DisplayPart(int num) {
+        Console.WriteLine($"[{num}]. ThroughHoleResistor\n" + 
+        $"  Manufacturer: {GetManufacturer()}\n" +  
+        $"  Package: {GetPackage()}\n" + 
+        $"  Tolerance: {GetTolerance()}\n" +
+        $"  Resistance: {GetResistance()}\n" +
+        $"  Power: {GetPowerWatts()}\n" +
+        $"  Temperature Coefficient: {GetTempCoefficient()}\n" +
+        $"  Quantity: {GetQuantity()}\n");
     }
 }

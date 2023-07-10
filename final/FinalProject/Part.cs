@@ -42,6 +42,10 @@ public class Part {
         return _tolerance;
     }
 
+    protected int GetQuantity() {
+        return _quantity;
+    }
+
 
     
     public virtual void AddPart() {
@@ -49,10 +53,14 @@ public class Part {
     }
 
     public virtual string GetInfo() {
-        return $"{GetManufacturer()},{GetPackage()},{GetTolerance()}";
+        return $"{GetManufacturer()},{GetPackage()},{GetTolerance()},{GetQuantity()}";
     }
 
-    public virtual string DisplayPart() {
-        return $"Manufacturer: {GetManufacturer()} Package: {GetPackage()} Tolerance: {GetTolerance()}";
+    public virtual void DisplayPart(int num) {
+        Console.WriteLine($"[{num}]. \n" + 
+        $"  Manufacturer: {GetManufacturer()}\n" +  
+        $"  Package: {GetPackage()}\n" + 
+        $"  Tolerance: {GetTolerance()}\n" +
+        $"  Quantity: {GetQuantity()}\n");
     }
 }
