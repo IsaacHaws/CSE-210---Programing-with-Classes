@@ -45,7 +45,7 @@ public class Capacitor : Part {
     }
 
     public override string GetInfo() {
-        return "";
+        return $"Capacitor,{GetManufacturer()},{GetPackage()},{GetTolerance()},{GetCapacitance()},{GetRatedVoltage()},{GetTempCoefficient()},{GetQuantity()}";
     }
 
     public override void DisplayPart(int num) {

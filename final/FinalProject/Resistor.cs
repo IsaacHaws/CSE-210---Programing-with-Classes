@@ -34,7 +34,7 @@ public class Resistor : Part {
     }
 
     public override string GetInfo() {
-        return $"{GetManufacturer()},{GetPackage()},{GetTolerance()},{GetResistance()},{GetPowerWatts()},{GetQuantity()}";
+        return $"Resistor,{GetManufacturer()},{GetPackage()},{GetTolerance()},{GetResistance()},{GetPowerWatts()},{GetQuantity()}";
     }
 
     public override void DisplayPart(int num) {

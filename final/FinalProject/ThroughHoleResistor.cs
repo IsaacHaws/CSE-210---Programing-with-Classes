@@ -25,7 +25,7 @@ public class ThroughHoleResistor : Resistor {
     }
 
     public override string GetInfo() {
-        return $"{GetManufacturer()},{GetPackage()},{GetTolerance()},{GetResistance()},{GetPowerWatts()},{GetTempCoefficient()},{GetQuantity()}";
+        return $"ThroughHoleResistor,{GetManufacturer()},{GetPackage()},{GetTolerance()},{GetResistance()},{GetPowerWatts()},{GetTempCoefficient()},{GetQuantity()}";
     }
 
     public override void DisplayPart(int num) {

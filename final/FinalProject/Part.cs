@@ -53,7 +53,7 @@ public class Part {
     }
 
     public virtual string GetInfo() {
-        return $"{GetManufacturer()},{GetPackage()},{GetTolerance()},{GetQuantity()}";
+        return $"Part,{GetManufacturer()},{GetPackage()},{GetTolerance()},{GetQuantity()}";
     }
 
     public virtual void DisplayPart(int num) {

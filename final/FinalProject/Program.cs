@@ -73,7 +73,7 @@ class Program
                 
                 case 3:
                     int l = 1;
-                    Console.WriteLine("The parts are:");
+                    Console.WriteLine("\nThe parts are:");
                     foreach (var item in items) {
                         item.DisplayPart(l);
                         l++;
@@ -85,12 +85,14 @@ class Program
                     break;
                 
                 case 5:
-                    Console.WriteLine("Case");
+                    ManageFile load = new ManageFile(items, "load");
                     break;
 
                 case 6:
+                    ManageFile save = new ManageFile(items, "save");
+                    
                     Console.WriteLine("Goodbye");
-                    quit = false;
+                    quit = true;
                     break;
                 
                 default:

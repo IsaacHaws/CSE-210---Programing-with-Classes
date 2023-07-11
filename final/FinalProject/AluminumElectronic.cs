@@ -31,7 +31,7 @@ public class AluminumElectronic : Capacitor {
     }
 
     public override string GetInfo() {
-        return "";
+        return $"AluminumElectronic,{GetManufacturer()},{GetPackage()},{GetTolerance()},{GetCapacitance()},{GetRatedVoltage()},{GetTempCoefficient()},{GetOperatingTemp()},{GetLeadSpacing()},{GetQuantity()}";
     }
 
     public override void DisplayPart(int num) {

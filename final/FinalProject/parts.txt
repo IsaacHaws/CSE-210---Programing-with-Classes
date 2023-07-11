@@ -1,0 +1,2 @@
+ChipResistor,usa,0987,0.25%,25ohms,45mW,30
+ThroughHoleResistor,china,0875,0.35%,100ohms,34mW,ectr,30

@@ -18,7 +18,7 @@ public class MultilayerCeramic : Capacitor {
     }
 
     public override string GetInfo() {
-        return "";
+        return $"MultilayerCeramic,{GetManufacturer()},{GetPackage()},{GetTolerance()},{GetCapacitance()},{GetRatedVoltage()},{GetTempCoefficient()},{GetQuantity()}";
     }
 
     public override void DisplayPart(int num) {

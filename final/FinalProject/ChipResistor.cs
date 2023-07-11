@@ -17,7 +17,7 @@ public class ChipResistor : Resistor {
     }
 
     public override string GetInfo() {
-        return $"{GetManufacturer()},{GetPackage()},{GetTolerance()},{GetResistance()},{GetPowerWatts()},{GetQuantity()}";
+        return $"ChipResistor,{GetManufacturer()},{GetPackage()},{GetTolerance()},{GetResistance()},{GetPowerWatts()},{GetQuantity()}";
     }
 
     public override void DisplayPart(int num) {
