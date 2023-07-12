@@ -20,7 +20,8 @@ class Program
             Console.WriteLine(" 3. List Items");
             Console.WriteLine(" 4. Search Item");
             Console.WriteLine(" 5. Load File");
-            Console.WriteLine(" 6. Save and Quit");
+            Console.WriteLine(" 6. Save File");
+            Console.WriteLine(" 7. Quit");
 
             Console.Write("What would you like to do? ");
             int menuAnswer = int.Parse(Console.ReadLine());
@@ -81,7 +82,7 @@ class Program
                     break;
                 
                 case 4:
-                    Console.WriteLine("Case");
+                    Search search = new Search(items);
                     break;
                 
                 case 5:
@@ -90,7 +91,9 @@ class Program
 
                 case 6:
                     ManageFile save = new ManageFile(items, "save");
-                    
+                    break;
+
+                case 7: 
                     Console.WriteLine("Goodbye");
                     quit = true;
                     break;
