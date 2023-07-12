@@ -6,7 +6,6 @@ public class ManageFile {
     private string[] _lines;
     private string _action;
     private string _itemType;
-    private string _itemInfo;
 
 
     public ManageFile(List<Part> items, string action) {
@@ -61,8 +60,7 @@ public class ManageFile {
                     powerWatts = splitLine[5];
                     quantity = int.Parse(splitLine[6]);
 
-                    items.Add(new ChipResistor(manufacturer, package, tolerance, resistance, 
-                    powerWatts, quantity));
+                    items.Add(new ChipResistor(manufacturer, package, tolerance, resistance, powerWatts, quantity));
                 }
 
                 else if(_itemType == "ThroughHoleResistor") {
@@ -71,14 +69,11 @@ public class ManageFile {
                     tempCoefficient = splitLine[6];
                     quantity = int.Parse(splitLine[7]);
 
-                    items.Add(new ThroughHoleResistor(manufacturer, package, tolerance, resistance, 
-                    powerWatts, tempCoefficient, quantity));
+                    items.Add(new ThroughHoleResistor(manufacturer, package, tolerance, resistance, powerWatts, tempCoefficient, quantity));
                 }
 
                 string capacitance;
                 string ratedVoltage;
-                string operatingTemp;
-                string leadSpacing;
 
                 else if(_itemType == "MultilayerCeramic") {
                     capacitance = splitLine[4];
@@ -86,33 +81,23 @@ public class ManageFile {
                     tempCoefficient = splitLine[6];
                     quantity = int.Parse(splitLine[7]);
 
-                    items.Add(new MultilayerCeramic(manufacturer, package, tolerance, capacitance, 
-                    ratedVoltage, tempCoefficient, quantity));
+                    items.Add(new MultilayerCeramic(manufacturer, package, tolerance, capacitance, ratedVoltage, tempCoefficient, quantity));
                 }
 
                 else if(_itemType == "AluminumElectronic") {
                     capacitance = splitLine[4];
                     ratedVoltage = splitLine[5];
                     tempCoefficient = splitLine[6];
-                    operatingTemp = splitLine[7];
-                    leadSpacing = splitLine[8];
+                    string operatingTemp = splitLine[7];
+                    string leadSpacing = splitLine[8];
                     quantity = int.Parse(splitLine[9]);
 
-                    items.Add(new AluminumElectronic(manufacturer, package, tolerance, capacitance, 
-                    ratedVoltage, tempCoefficient, operatingTemp, leadSpacing, quantity));
+                    items.Add(new AluminumElectronic(manufacturer, package, tolerance, capacitance, ratedVoltage, tempCoefficient, operatingTemp, leadSpacing, quantity));
                 }
-
-
             }
         }
     }
 
-
-
-
-    public void AddPart() {
-
-    }
 
     public void DisplayDots() {
         for (int i = 0; i < 4; i++)
