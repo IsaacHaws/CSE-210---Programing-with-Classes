@@ -34,15 +34,20 @@ public class ManageFile {
         else if(_action == "load") {
             Console.Write("Loading");
             DisplayDots();
+            
 
             _lines = System.IO.File.ReadAllLines(_filename);
 
             string manufacturer;
             string package;
             string tolerance;
-
+            
             string resistance;
             string powerWatts;
+            
+            string capacitance;
+            string ratedVoltage;
+            
             int quantity;
 
             string tempCoefficient;
@@ -54,7 +59,8 @@ public class ManageFile {
                 manufacturer = splitLine[1];
                 package = splitLine[2];
                 tolerance = splitLine[3];
-
+                
+                
                 if(_itemType == "ChipResistor") {
                     resistance = splitLine[4];
                     powerWatts = splitLine[5];
@@ -72,8 +78,7 @@ public class ManageFile {
                     items.Add(new ThroughHoleResistor(manufacturer, package, tolerance, resistance, powerWatts, tempCoefficient, quantity));
                 }
 
-                string capacitance;
-                string ratedVoltage;
+                
 
                 else if(_itemType == "MultilayerCeramic") {
                     capacitance = splitLine[4];
@@ -96,6 +101,8 @@ public class ManageFile {
                 }
             }
         }
+
+        Console.WriteLine("!Done\n");
     }
 
 
