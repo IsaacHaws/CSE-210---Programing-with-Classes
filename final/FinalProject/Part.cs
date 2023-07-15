@@ -52,8 +52,14 @@ public class Part {
 
 
     
-    public virtual void AddPart() {
-
+    public virtual void EditQuantity(int number, string action) {
+        if(action == "Subtract") {
+            _quantity = _quantity - number;
+        }
+        else if(action == "Add") {
+            _quantity = _quantity + number;
+        }
+        
     }
 
     //Return the class info in CSV form

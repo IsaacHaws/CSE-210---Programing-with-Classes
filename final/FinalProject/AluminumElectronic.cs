@@ -33,9 +33,6 @@ public class AluminumElectronic : Capacitor {
 
 
 
-    public override void AddPart() {
-        
-    }
 
     //Return the class info in CSV form
     public override string GetInfo() {

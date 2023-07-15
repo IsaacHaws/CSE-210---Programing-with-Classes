@@ -22,11 +22,12 @@ class Program
             Console.WriteLine("Please pick a menu option:");
             Console.WriteLine(" 1. Add Item");
             Console.WriteLine(" 2. Remove Item");
-            Console.WriteLine(" 3. List Items");
-            Console.WriteLine(" 4. Search Item");
-            Console.WriteLine(" 5. Load File");
-            Console.WriteLine(" 6. Save File");
-            Console.WriteLine(" 7. Quit");
+            Console.WriteLine(" 3. Edit Quantity");
+            Console.WriteLine(" 4. List Items");
+            Console.WriteLine(" 5. Search Item");
+            Console.WriteLine(" 6. Load File");
+            Console.WriteLine(" 7. Save File");
+            Console.WriteLine(" 8. Quit");
             Console.Write("What would you like to do? ");
 
             //Get user answer for switch stament 
@@ -82,14 +83,56 @@ class Program
                     }
                     
                     //Ask user what item they would like to remove
-                    Console.Write("Which item would you like to remove? ");
-                    
+                    Console.Write("\nWhich item would you like to remove? ");
+
                     //Remove part from list using built in method
                     items.RemoveAt(int.Parse(Console.ReadLine()) - 1);
                     break;
+
+                //Edit Quantity
+                case 3:
+                    int amount;
+                    //Ask user if they want to add or subtract
+                    Console.WriteLine("Would you like to add or subtract the quantity? ");
+                    Console.Write("1. Add, " + "2. Subtract:  ");
+                    int editAnswer = int.Parse(Console.ReadLine());
+
+                    int j = 1;
+                    //Loop through list and print each part
+                    foreach (var item in items) {
+                        //Display part using class method
+                        item.DisplayPart(j);
+                        j++;
+                    }
+                    
+                    //Ask user for which part they want to edit 
+                    Console.Write("What part would you like to edit? ");
+                    int editIndex = int.Parse(Console.ReadLine()) - 1;
+
+                    //Add quantity
+                    if(editAnswer == 1) {
+                        //Get amount to add
+                        Console.Write("\nHow many would you like to add to the part? ");
+                        amount = int.Parse(Console.ReadLine());
+                        
+                        //Add using class method
+                        items[editIndex].EditQuantity(amount, "Add");
+                    }
+
+                    //Subtract quantity
+                    else if(editAnswer == 2) {
+                        //Get amount to subtract
+                        Console.Write("\nHow many would you like to subtract from the part? ");
+                        amount = int.Parse(Console.ReadLine());
+                        
+                        //Subtract using class method
+                        items[editIndex].EditQuantity(amount, "Subtract");
+                    }
+                    Console.WriteLine();
+                    break;
                 
                 //Print list
-                case 3:
+                case 4:
                     int l = 1;
                     Console.WriteLine("\nThe parts are:");
                     //Print each item using class method
@@ -100,22 +143,22 @@ class Program
                     break;
                 
                 //Search for item value
-                case 4:
+                case 5:
                     Search search = new Search(items);
                     break;
                 
                 //Load from selected file
-                case 5:
+                case 6:
                     ManageFile load = new ManageFile(items, "load");
                     break;
 
                 //Save to selected file
-                case 6:
+                case 7:
                     ManageFile save = new ManageFile(items, "save");
                     break;
 
                 //Quit
-                case 7: 
+                case 8: 
                     Console.WriteLine("Goodbye");
                     //Set quit to "true"
                     quit = true;

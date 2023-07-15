@@ -7,37 +7,42 @@ public class ManageFile {
     private string _action;
     private string _itemType;
 
-
+    //Constructor for loading and saving
     public ManageFile(List<Part> items, string action) {
         //Get file name
         Console.WriteLine();
         Console.Write("What is the name of the file? ");
         _filename = Console.ReadLine();
         
+        //Set the value of _action using constructor parameter
         _action = action;
 
+        //If _action equels "save" save list to _filename
         if(_action == "save") {
             using (StreamWriter outputFile = new StreamWriter(_filename))
-            {    
+            {   
+                //Display action message and display animation
                 Console.Write("Saving");
                 DisplayDots();
+                
+                //Loop though list and write each item to file using class method
                 foreach (Part item in items)
                 {
                     outputFile.WriteLine(item.GetInfo());
                 }
-                
-                Console.WriteLine("The information has been saved!");
             }
         }
 
-        
+        //If _action equels "load" load part info from file
         else if(_action == "load") {
+            //Display action message and display animation
             Console.Write("Loading");
             DisplayDots();
             
-
+            //Get Line from file
             _lines = System.IO.File.ReadAllLines(_filename);
 
+            //
             string manufacturer;
             string package;
             string tolerance;
@@ -102,7 +107,7 @@ public class ManageFile {
             }
         }
 
-        Console.WriteLine("!Done\n");
+        Console.WriteLine("Done!\n");
     }
 
 
