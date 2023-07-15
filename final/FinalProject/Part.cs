@@ -7,7 +7,7 @@ public class Part {
     private string _tolerance;
     private int _quantity;
 
-
+    //Constructor to ask the user for class variable values
     public Part() {
         Console.Write("Who is the maker of the part? ");
         _manufacturer = Console.ReadLine();
@@ -22,6 +22,7 @@ public class Part {
         _quantity = int.Parse(Console.ReadLine());
     }
 
+    //Constructor to get class variable values through parameters
     public Part(string maker, string package, string tolerance, int quantity) {
         _manufacturer = maker;
         _package = package;
@@ -29,19 +30,22 @@ public class Part {
         _quantity = quantity;
     }
 
-    
+    //Return the value of "_manufacturer"
     protected string GetManufacturer() {
         return _manufacturer;
     }
 
+    //Return the value of "_package"
     protected string GetPackage() {
         return _package;
     }
 
+    //Return the value of "_tolerance"
     protected string GetTolerance() {
         return _tolerance;
     }
 
+    //Return the value of "_quantity"
     protected int GetQuantity() {
         return _quantity;
     }
@@ -52,10 +56,12 @@ public class Part {
 
     }
 
+    //Return the class info in CSV form
     public virtual string GetInfo() {
         return $"Part,{GetManufacturer()},{GetPackage()},{GetTolerance()},{GetQuantity()}";
     }
-
+    
+    //Display part info
     public virtual void DisplayPart(int num) {
         Console.WriteLine($"[{num}]. \n" + 
         $"  Manufacturer: {GetManufacturer()}\n" +  

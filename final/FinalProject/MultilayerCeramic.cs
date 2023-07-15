@@ -8,6 +8,7 @@ public class MultilayerCeramic : Capacitor {
        
     }
 
+    //Constructor to get class variable values through parameters
     public MultilayerCeramic(string maker, string package, string tolerance, string capacitance, string ratedVoltage, string tempCoefficient, int quantity): base(maker, package, tolerance, capacitance, ratedVoltage, tempCoefficient, quantity) {
 
     }
@@ -17,10 +18,12 @@ public class MultilayerCeramic : Capacitor {
         
     }
 
+    //Return the class info in CSV form
     public override string GetInfo() {
         return $"MultilayerCeramic,{GetManufacturer()},{GetPackage()},{GetTolerance()},{GetCapacitance()},{GetRatedVoltage()},{GetTempCoefficient()},{GetQuantity()}";
     }
 
+    //Display part info
     public override void DisplayPart(int num) {
         Console.WriteLine($"[{num}]. MultilayerCeramic\n" + 
         $"  Manufacturer: {GetManufacturer()}\n" +  
