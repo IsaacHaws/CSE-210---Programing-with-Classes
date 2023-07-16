@@ -39,10 +39,10 @@ public class ManageFile {
             Console.Write("Loading");
             DisplayDots();
             
-            //Get Line from file
+            //Get lines from file
             _lines = System.IO.File.ReadAllLines(_filename);
 
-            //
+            //Variable declarations to later be passed into class initialization
             string manufacturer;
             string package;
             string tolerance;
@@ -57,15 +57,19 @@ public class ManageFile {
 
             string tempCoefficient;
 
+            //Loop through each line in list
             foreach (string line in _lines) {
+                //Split the info line using commas
                 string[] splitLine = line.Split(",");
 
+                //Set common variable to splitLine[index] values  
                 _itemType = splitLine[0];
                 manufacturer = splitLine[1];
                 package = splitLine[2];
                 tolerance = splitLine[3];
                 
-                
+                //If itemType is "ChipResistor" set the required variables to the 
+                //indexes of the split line and add a new ChipResistor to the list
                 if(_itemType == "ChipResistor") {
                     resistance = splitLine[4];
                     powerWatts = splitLine[5];
@@ -74,6 +78,8 @@ public class ManageFile {
                     items.Add(new ChipResistor(manufacturer, package, tolerance, resistance, powerWatts, quantity));
                 }
 
+                //If itemType is "ThroughHoleResistor" set the required variables to the 
+                //indexes of the split line and add a new ThroughHoleResistor to the list
                 else if(_itemType == "ThroughHoleResistor") {
                     resistance = splitLine[4];
                     powerWatts = splitLine[5];
@@ -83,8 +89,8 @@ public class ManageFile {
                     items.Add(new ThroughHoleResistor(manufacturer, package, tolerance, resistance, powerWatts, tempCoefficient, quantity));
                 }
 
-                
-
+                //If itemType is "MultilayerCeramic" set the required variables to the 
+                //indexes of the split line and add a new MultilayerCeramic to the list
                 else if(_itemType == "MultilayerCeramic") {
                     capacitance = splitLine[4];
                     ratedVoltage = splitLine[5];
@@ -94,6 +100,8 @@ public class ManageFile {
                     items.Add(new MultilayerCeramic(manufacturer, package, tolerance, capacitance, ratedVoltage, tempCoefficient, quantity));
                 }
 
+                //If itemType is "AluminumElectronic" set the required variables to the 
+                //indexes of the split line and add a new AluminumElectronic to the list
                 else if(_itemType == "AluminumElectronic") {
                     capacitance = splitLine[4];
                     ratedVoltage = splitLine[5];
@@ -106,12 +114,12 @@ public class ManageFile {
                 }
             }
         }
-
         Console.WriteLine("Done!\n");
     }
 
-
+    //Animation for fun
     public void DisplayDots() {
+        //Display four periods with a 1 second delay
         for (int i = 0; i < 4; i++)
         {
             Console.Write(".");

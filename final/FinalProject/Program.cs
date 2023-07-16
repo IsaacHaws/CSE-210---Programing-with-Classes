@@ -8,7 +8,7 @@ class Program
         
         //List of Parts
         List<Part> items = new List<Part>();
-        
+    
         //Bool for while loop
         bool quit = false;
         
@@ -25,8 +25,8 @@ class Program
             Console.WriteLine(" 3. Edit Quantity");
             Console.WriteLine(" 4. List Items");
             Console.WriteLine(" 5. Search Item");
-            Console.WriteLine(" 6. Load File");
-            Console.WriteLine(" 7. Save File");
+            Console.WriteLine(" 6. Load from File");
+            Console.WriteLine(" 7. Save to File");
             Console.WriteLine(" 8. Quit");
             Console.Write("What would you like to do? ");
 

@@ -1,8 +1,0 @@
-ChipResistor,usa,0987,0.25%,25ohms,45mW,30
-ThroughHoleResistor,china,0875,0.35%,100ohms,34mW,ectr,30
-MultilayerCeramic,Hong Kong,0724,0.75%,50v,,CDF,3
-AluminumElectronic,USParts,9898,0.85%,30v,,CDF,20c,3.5mm,5
-ChipResistor,usa,0634,0.34%,45ohms,234Mw,50
-ThroughHoleResistor,china,05847,0.98%,67ohms,90mW,CDF,34
-MultilayerCeramic,3,Hong Kong,0.35%,45uf,50v,CDF,5
-AluminumElectronic,USParts,9898,0.45%,100uf,45v,CDF,45c,3.5mm,56

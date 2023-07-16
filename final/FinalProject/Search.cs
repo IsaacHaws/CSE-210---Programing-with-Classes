@@ -6,8 +6,9 @@ public class Search {
     private string _searchValue;
     private int _partIndex;
     
-
+    //Constructor for searching the parts for certain values    
     public Search(List<Part> items) {
+        //Ask what kind of part the user would like to look for
         Console.WriteLine();
         Console.WriteLine(
         "1. ChipResistor\n" + 
@@ -20,6 +21,7 @@ public class Search {
         {   
             //Chip Resistor
             case 1: 
+                //Ask user what type of value they would like to look for
                 Console.WriteLine(
                 "\n1. Manufacturer\n" + 
                 "2. Package\n" + 
@@ -29,14 +31,17 @@ public class Search {
                 Console.Write("What value of the part would you like to search for: ");
                 _partIndex = int.Parse(Console.ReadLine());
 
+                //Ask user to enter the value to search for 
                 Console.Write("\nPlease enter the value you want to search for: ");
                 _searchValue = Console.ReadLine();
 
-                FindPart(items, _partIndex, _searchValue);
+                //Find and print item using class methods
+                FindPart(items, "ChipResistor", _partIndex, _searchValue);
                 break;
-
+            
+            //Through Hole Resistor
             case 2: 
-                //Through Hole Resistor
+                //Ask user what type of value they would like to look for
                 Console.WriteLine(
                 "\n1. Manufacturer\n" + 
                 "2. Package\n" + 
@@ -47,14 +52,17 @@ public class Search {
                 Console.Write("What value of the part would you like to search for: ");
                 _partIndex = int.Parse(Console.ReadLine());
 
+                //Ask user to enter the value to search for
                 Console.Write("\nPlease enter the value you want to search for: ");
                 _searchValue = Console.ReadLine();
 
-                FindPart(items, _partIndex, _searchValue);
+                //Find and print item using class methods
+                FindPart(items, "ThroughHoleResistor", _partIndex, _searchValue);
                 break;
 
+            //Multilayer Ceramic Capacitor
             case 3:
-                //Multilayer Ceramic Capacitor 
+                //Ask user what type of value they would like to look for
                 Console.WriteLine(
                 "\n1. Manufacturer\n" + 
                 "2. Package\n" + 
@@ -65,14 +73,17 @@ public class Search {
                 Console.Write("What value of the part would you like to search for: ");
                 _partIndex = int.Parse(Console.ReadLine());
                 
+                //Ask user to enter the value to search for
                 Console.Write("\nPlease enter the value you want to search for: ");
                 _searchValue = Console.ReadLine();
 
-                FindPart(items, _partIndex, _searchValue);
+                //Find and print item using class methods
+                FindPart(items, "MultilayerCeramic", _partIndex, _searchValue);
                 break;
-
+            
+            //Aluminum Electronic Capacitor
             case 4: 
-                //Aluminum Electronic Capacitor
+                //Ask user what type of value they would like to look for
                 Console.WriteLine(
                 "\n1. Manufacturer\n" + 
                 "2. Package\n" + 
@@ -85,10 +96,12 @@ public class Search {
                 Console.Write("What value of the part would you like to search for: ");
                 _partIndex = int.Parse(Console.ReadLine());
 
+                //Ask user to enter the value to search for
                 Console.Write("\nPlease enter the value you want to search for: ");
                 _searchValue = Console.ReadLine();
 
-                FindPart(items, _partIndex, _searchValue);
+                //Find and print item using class methods
+                FindPart(items, "AluminumElectronic", _partIndex, _searchValue);
                 break;
             
             //Default
@@ -99,26 +112,41 @@ public class Search {
     }
 
 
-    public void FindPart(List<Part> items, int index, string value) {
+    public void FindPart(List<Part> items, string partType, int index, string value) {
+        //List to put matched items in 
         List<Part> searchedItems = new List<Part>();
         
         int l = 0;
         Console.WriteLine("Here are the parts: ");
+        
+        //Compare each item at the certian index to the entered value
         foreach (var item in items) {
-           string itemInfo = item.GetInfo();
-           string[] splitInfo = itemInfo.Split(",");
+            //Get class method to get part info
+            string itemInfo = item.GetInfo();
 
-           if (splitInfo[index] == _searchValue) {
-                searchedItems.Add(item);
-                PrintItem(searchedItems, l);
-                l++;
-           }
+            //Split string at commas
+            string[] splitInfo = itemInfo.Split(",");
+
+            //If the part type from the list is the same as the user 
+            //entered part type add part to tempoary list 
+            if(splitInfo[0] == partType) {
+                if (splitInfo[index] == _searchValue) {
+                    searchedItems.Add(item);
+                    
+                    //Print item to console using class method
+                    PrintItem(searchedItems, l);
+                    l++;
+                }
+            } 
         }
+
+        //If no items have been added to the list display message
         if(l == 0) {
             Console.WriteLine("There were no parts found with that value\n");
         }
     }
 
+    //Display the part using class method
     public void PrintItem(List<Part> searchedItems, int index) {
         searchedItems[index].DisplayPart(index + 1);
     }
